@@ -1,8 +1,8 @@
 const Home = () => {
   return (
-    <>
-      <h1>Home</h1>
-    </>
+    <div className="bg-zinc-900 h-screen w-screen block">
+      <h1 className="text-white">Home</h1>
+    </div>
   )
 }
 
