@@ -3,10 +3,10 @@ import { getDocs, collection } from 'firebase/firestore'
 import { db } from '../../config/firebase'
 import { Post } from './Post'
 
-interface Post {
+export interface Post {
   id: string
   userId: string
-  userName: string
+  username: string
   title: string
   description: string
 }
@@ -26,12 +26,15 @@ const Home = () => {
   useEffect(() => {
     getPosts()
   }, [])
+
   return (
     <div className="bg-zinc-900 h-screen w-screen block">
       <h1 className="text-white">Home</h1>
-      {postsList?.map((post) => (
-        <Post />
-      ))}
+      <div className="text-white">
+        {postsList?.map((post) => (
+          <Post post={post} />
+        ))}
+      </div>
     </div>
   )
 }
